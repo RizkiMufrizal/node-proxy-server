@@ -1,0 +1,12 @@
+[
+    {
+        "pathFrontEnd": "/api/v0",
+        "pathBackendEnd": "/v0",
+        "target": "http://localhost:3000"
+    },
+    {
+        "pathFrontEnd": "/api/v1",
+        "pathBackendEnd": "/v1",
+        "target": "http://localhost:3001"
+    }
+]
