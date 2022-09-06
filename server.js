@@ -1,4 +1,5 @@
 const os = require("os");
+const fs = require("fs");
 const https = require("https");
 const appHttps = require("./proxy-server");
 const appHttp = require("./proxy-server");
