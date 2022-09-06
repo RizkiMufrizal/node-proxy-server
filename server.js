@@ -1,11 +1,18 @@
 const os = require("os");
 const https = require("https");
-const app = require("./proxy-server");
+const appHttps = require("./proxy-server");
+const appHttp = require("./proxy-server");
 
-const port = process.env.PORT || 8080;
+const portHttps = process.env.PORT || 2929;
+const portHttp = process.env.PORT || 1919;
+
 https.createServer({
     key: fs.readFileSync("key.pem"),
     cert: fs.readFileSync("cert.pem")
-}, app).listen(port, () => {
-    console.log(`app listening at http://${os.hostname()}:${port}`);
+}, appHttps).listen(portHttps, () => {
+    console.log(`app listening at https://${os.hostname()}:${portHttps}`);
+});
+
+appHttp.listen(portHttp, () => {
+    console.log(`app listening at http://${os.hostname()}:${portHttp}`);
 });
